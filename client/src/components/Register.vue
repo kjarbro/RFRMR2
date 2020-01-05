@@ -1,36 +1,36 @@
 <template>
-  <v-layout >
-    <div class="d-flex">
-      <v-card >
-        <div class="white elevation-2">
-          <v-toolbar flat dense class="red" dark>
-            <v-toolbar-title>Register</v-toolbar-title>
-          </v-toolbar>
-          <div class="pl-4 pr-4 pt-2 pb-2">
-            <input
-              type="email"
+    <v-card class="elevation-12">
+        <v-toolbar
+          class="red"
+          dark
+          flat
+        >
+        <v-toolbar-title>Login form</v-toolbar-title>
+        </v-toolbar>
+        <v-card-text>
+          <v-form>
+            <v-text-field
+              label="Email"
               name="email"
+              type = "email"
               v-model="email"
-              placeholder="email"/>
-            <br>
-            <input
-              type="password"
+            />
+
+            <v-text-field
+              id="password"
+              label="Password"
               name="password"
               v-model="password"
-              placeholder="password" />
-            <br>
-            <div class="error"  v-html="error" />
-            <br>
-            <v-btn
-              class="blue"
-              @click="register">
-              Register
-            </v-btn>
-          </div>
-        </div>
+              type="password"
+            />
+          </v-form>
+          <div class="error"  v-html="error" />
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer />
+          <v-btn dark flat>Register</v-btn>
+        </v-card-actions>
       </v-card>
-    </div>
-  </v-layout>
 </template>
 
 <script>
