@@ -1,11 +1,11 @@
 <template>
-    <v-card class="elevation-12">
+    <v-card class="white elevation-2">
         <v-toolbar
-          class="red"
-          dark
+          class="blue-grey"
           flat
+          text
         >
-        <v-toolbar-title>Login form</v-toolbar-title>
+        <v-toolbar-title>Sign up!</v-toolbar-title>
         </v-toolbar>
         <v-card-text>
           <v-form>
@@ -28,9 +28,9 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer />
-          <v-btn dark flat>Register</v-btn>
+          <v-btn text class="blue-grey" @click="register">Register</v-btn>
         </v-card-actions>
-      </v-card>
+    </v-card>
 </template>
 
 <script>
@@ -44,16 +44,15 @@ export default {
     }
   },
   methods: {
-    async register(){
-      try{
+    async register () {
+      try {
         await AuthenicationService.register({
-        email: this.email,
-        password: this.password
+          email: this.email,
+          password: this.password
         })
       } catch (error) {
         this.error = error.response.data.error
       }
-      console.log(response.data)
     }
   }
 }
@@ -61,7 +60,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .error {
-    color: red;
-  }
 </style>
